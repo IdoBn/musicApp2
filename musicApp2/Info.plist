@@ -20,8 +20,17 @@
 	<string>????</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
+	<key>FacebookAppID</key>
+	<string>1417458451820697</string>
+	<key>FacebookDisplayName</key>
+	<string>Music</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>audio</string>
+		<string>fetch</string>
+	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
@@ -35,6 +44,19 @@
 		<string>UIInterfaceOrientationPortrait</string>
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
+	</array>
+	<key>URL types</key>
+	<array>
+		<dict>
+			<key>URL Schemes
+&lt;plist version="1.0"&gt;
+&lt;array/&gt;
+&lt;/plist&gt;
+</key>
+			<array/>
+			<key>item0</key>
+			<string>fb1417458451820697</string>
+		</dict>
 	</array>
 </dict>
 </plist>
