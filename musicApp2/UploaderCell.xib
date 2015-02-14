@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6249" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6243"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="uploaderCell" rowHeight="100" id="aE8-M8-W4a" customClass="UploaderTableViewCell" customModule="musicApp2" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aE8-M8-W4a" id="vc4-U6-a6h">
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dsg-PR-af0">
+                        <rect key="frame" x="8" y="3" width="108" height="92"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="uploaded by" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R31-Df-qdA">
+                        <rect key="frame" x="124" y="8" width="96" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="votes: x" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iph-DS-Wh1">
+                        <rect key="frame" x="124" y="39" width="61" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KhM-uQ-sgD">
+                        <rect key="frame" x="228" y="8" width="84" height="83"/>
+                        <state key="normal" title="vote">
+                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                        <connections>
+                            <action selector="votesClicked:" destination="aE8-M8-W4a" eventType="touchUpInside" id="uYk-IW-SDJ"/>
+                        </connections>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="KhM-uQ-sgD" firstAttribute="leading" secondItem="R31-Df-qdA" secondAttribute="trailing" constant="8" id="11e-sq-Jbs"/>
+                    <constraint firstItem="dsg-PR-af0" firstAttribute="top" secondItem="vc4-U6-a6h" secondAttribute="topMargin" constant="-5" id="2Bk-fe-6yP"/>
+                    <constraint firstItem="R31-Df-qdA" firstAttribute="top" secondItem="vc4-U6-a6h" secondAttribute="topMargin" id="4Kv-xW-5xd"/>
+                    <constraint firstItem="KhM-uQ-sgD" firstAttribute="bottom" secondItem="vc4-U6-a6h" secondAttribute="bottomMargin" id="8qy-gn-dz2"/>
+                    <constraint firstItem="KhM-uQ-sgD" firstAttribute="leading" secondItem="Iph-DS-Wh1" secondAttribute="trailing" constant="43" id="IPy-zI-Hsg"/>
+                    <constraint firstItem="Iph-DS-Wh1" firstAttribute="top" secondItem="R31-Df-qdA" secondAttribute="bottom" constant="10" id="Jok-MC-J71"/>
+                    <constraint firstItem="KhM-uQ-sgD" firstAttribute="top" secondItem="vc4-U6-a6h" secondAttribute="topMargin" id="SVQ-Lv-vzM"/>
+                    <constraint firstItem="dsg-PR-af0" firstAttribute="leading" secondItem="vc4-U6-a6h" secondAttribute="leadingMargin" id="TaB-qQ-Ond"/>
+                    <constraint firstItem="R31-Df-qdA" firstAttribute="leading" secondItem="dsg-PR-af0" secondAttribute="trailing" constant="8" id="URX-4s-9Ez"/>
+                    <constraint firstItem="KhM-uQ-sgD" firstAttribute="trailing" secondItem="vc4-U6-a6h" secondAttribute="trailingMargin" id="boy-Oq-XCC"/>
+                    <constraint firstItem="Iph-DS-Wh1" firstAttribute="leading" secondItem="dsg-PR-af0" secondAttribute="trailing" constant="8" id="cY9-P0-EuX"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="dsg-PR-af0" secondAttribute="trailing" constant="196" id="gS8-ZS-dUL"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="dsg-PR-af0" secondAttribute="bottom" constant="-4" id="sUV-Tj-xP5"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="numberOfVotes" destination="Iph-DS-Wh1" id="9cN-7q-rSf"/>
+                <outlet property="uploaderImage" destination="dsg-PR-af0" id="ee7-Qq-jmL"/>
+                <outlet property="uploaderName" destination="R31-Df-qdA" id="e87-rJ-uJk"/>
+            </connections>
+            <point key="canvasLocation" x="510" y="295"/>
+        </tableViewCell>
+    </objects>
+</document>

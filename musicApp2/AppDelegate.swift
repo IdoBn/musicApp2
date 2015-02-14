@@ -7,12 +7,16 @@
 //
 
 import UIKit
+import AVFoundation
+import AVKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    var playerController: AVPlayerViewController?
+    var moviePlayer: AVPlayer?
+    var user: NSDictionary?
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         

@@ -39,6 +39,7 @@ class ViewController: UIViewController, FBLoginViewDelegate {
         println("User \(user)")
         println("access token: \(FBSession.activeSession().accessTokenData.accessToken)")
         println("expires at: \(FBSession.activeSession().accessTokenData.expirationDate)")
+        let appDelegate: AppDelegate = UIApplication.sharedApplication().delegate as AppDelegate
         
 
         manager.POST("http://music-hasalon-api.herokuapp.com/sessions", parameters: [
@@ -47,6 +48,7 @@ class ViewController: UIViewController, FBLoginViewDelegate {
             ], constructingBodyWithBlock: nil, success: { (operation: AFHTTPRequestOperation!,responseObject: AnyObject!) in
                 println("JSON: " + responseObject.description)
                 self.user = responseObject as NSDictionary
+                appDelegate.user = self.user
                 self.performSegueWithIdentifier("loginSegue", sender: self)
             }, failure: { (operation: AFHTTPRequestOperation!,error: NSError!) in
                 println("Error: " + error.localizedDescription)
@@ -69,7 +71,9 @@ class ViewController: UIViewController, FBLoginViewDelegate {
         println("segue")
         if segue.identifier == "loginSegue" {
             println("login segue")
-            let navController : UINavigationController = segue.destinationViewController as UINavigationController
+            let tabController : UITabBarController = segue.destinationViewController as UITabBarController
+            println("tabController")
+            let navController : UINavigationController = tabController.viewControllers?.first as UINavigationController
             println("navController")
             let partiesTVC : PartiesTableViewController = navController.viewControllers[0] as PartiesTableViewController
             println("Parties controller")

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import JSON
 
 class User {
     
@@ -15,6 +16,7 @@ class User {
     let name: String
     let email: String?
     let thumbnail: UIImage
+    let largeThumbnail: UIImage
     
     // constructor
     
@@ -30,6 +32,14 @@ class User {
         let url = NSURL(string: thumbnail)
         let data = NSData(contentsOfURL: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check
         self.thumbnail = UIImage(data: data!)!
+        
+        let largeUrl = NSURL(string: thumbnail + "?type=large")
+        let largeData = NSData(contentsOfURL: largeUrl!)
+        self.largeThumbnail = UIImage(data: largeData!)!
+    }
+    
+    init(user: Data) {
+        let jsonUser = JSON(data: user)
     }
     
     init(user: NSDictionary) {
@@ -44,6 +54,10 @@ class User {
         let url = NSURL(string: urlString)
         let data = NSData(contentsOfURL: url!)
         self.thumbnail = UIImage(data: data!)!
+        
+        let largeUrl = NSURL(string: urlString + "?type=large")
+        let largeData = NSData(contentsOfURL: largeUrl!)
+        self.largeThumbnail = UIImage(data: largeData!)!
     }
     
     // methods

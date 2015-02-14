@@ -12,21 +12,28 @@ import AVKit
 
 class PartyViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, AVAudioSessionDelegate, PTPusherDelegate {
 
+    required init(coder aDecoder: NSCoder) {
+        self.appDelegate = UIApplication.sharedApplication().delegate as AppDelegate
+        super.init(coder: aDecoder)
+        //fatalError("init(coder:) has not been implemented")
+    }
+
     var requests: [Request] = []
     var request: Request?
     var party: Party?
     let managerT = AFHTTPRequestOperationManager()
     let managerJ = AFHTTPRequestOperationManager()
-    var playerController: AVPlayerViewController!
-    var moviePlayer: AVPlayer!
+//    var playerController: AVPlayerViewController!
+//    var moviePlayer: AVPlayer!
     var user : NSDictionary?
-    var audioSession: AVAudioSession!
+    var appDelegate: AppDelegate
     var pusherClient = PTPusher()//PTPusher.pusherWithKey("27aa526da1424bb735a4", delegate: self, encrypted: false)
     
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         
         // Do any additional setup after loading the view.
         println("party view controller \(self.party)")
@@ -93,10 +100,11 @@ class PartyViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         self.pusherClient.connect()
         
+        
         // GET party songs
         self.loadTableView() {
             self.tableView.reloadData()
-            println("check movie player \(self.moviePlayer)")
+            println("check movie player \(self.appDelegate.moviePlayer)")
             self.loadPlayer()
         }
         self.title = self.party!.name
@@ -105,23 +113,35 @@ class PartyViewController: UIViewController, UITableViewDelegate, UITableViewDat
 
 //    override func viewWillDisappear(animated: Bool) {
 //        println("view will disappear")
-//        AVAudioSession.sharedInstance().setActive(false, error: nil)
-//        self.playerController?.player = nil
-//        self.playerController = nil
-//        self.moviePlayer = nil
+//        var error: NSError?
+//        
+//        self.appDelegate.moviePlayer?.pause()
+//        self.appDelegate.playerController?.player.pause()
+//        self.appDelegate.playerController = nil
+//        self.appDelegate.moviePlayer = nil
+//        
+//        AVAudioSession.sharedInstance().setActive(false, withOptions: nil, error: &error)
+//        
+//        if error != nil {
+//            println("Error executing request for entity 1 \(error!.description)")
+//        }
 //    }
 //
 //    override func viewDidDisappear(animated: Bool) {
 //        println("view did disappear")
-//        self.playerController?.player?.pause()
-//        self.playerController = nil
-//        self.moviePlayer = nil
+//        var error: NSError?
+//        
+//        self.appDelegate.moviePlayer?.pause()
+//        self.appDelegate.playerController?.player.pause()
+//        self.appDelegate.playerController = nil
+//        self.appDelegate.moviePlayer = nil
+//        
+//        AVAudioSession.sharedInstance().setActive(false, withOptions: nil, error: &error)
+////        AVAudioSession.sharedInstance().setActive(false, error: &error)
+//        if error != nil {
+//            println("Error executing request for entity 2 \(error!.description)")
+//        }
 //    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
     // MARK: - TableView
     
@@ -214,24 +234,30 @@ class PartyViewController: UIViewController, UITableViewDelegate, UITableViewDat
                     var url:NSURL = NSURL(string: quote)!
                     let playerItem = AVPlayerItem(URL: url)
                     
-                    if self.moviePlayer == nil {
-                        self.moviePlayer = AVPlayer(playerItem: playerItem)
+                    if self.appDelegate.moviePlayer == nil {
+                        //self.moviePlayer = AVPlayer(playerItem: playerItem)
+                        //self.moviePlayer = IBNPlayer.getPlayer(playerItem)
+                        //self.moviePlayer = appDelegate.moviePlayer
+                        self.appDelegate.moviePlayer = AVPlayer(playerItem: playerItem)
                         println("### moviePlayer nil ###")
                     } else {
-                        self.moviePlayer.replaceCurrentItemWithPlayerItem(playerItem)
+                        //self.moviePlayer.replaceCurrentItemWithPlayerItem(playerItem)
+                        self.appDelegate.moviePlayer?.replaceCurrentItemWithPlayerItem(playerItem)
                         println("### moviePlayer set current ###")
                     }
                     
-                    if self.playerController == nil {
-                        self.playerController = AVPlayerViewController()
+                    if self.appDelegate.playerController == nil {
+                        //self.playerController = AVPlayerViewController()
+                        //self.playerController = IBNPlayer.getPlayerController()
+                        self.appDelegate.playerController = AVPlayerViewController()
                     }
                     
-                    self.playerController.player = self.moviePlayer
-                    self.addChildViewController(self.playerController)
-                    self.view.addSubview(self.playerController.view)
-                    self.playerController.view.frame = CGRectMake(0, 60, self.view.bounds.width, 200)
+                    self.appDelegate.playerController?.player = self.appDelegate.moviePlayer!
+                    self.addChildViewController(self.appDelegate.playerController!)
+                    self.view.addSubview(self.appDelegate.playerController!.view)
+                    self.appDelegate.playerController!.view.frame = CGRectMake(0, 60, self.view.bounds.width, 200)
                     
-                    self.moviePlayer.play()
+                    self.appDelegate.moviePlayer?.play()
                     
                     self.startBackgroundStreaming()
                     
@@ -272,8 +298,18 @@ class PartyViewController: UIViewController, UITableViewDelegate, UITableViewDat
         self.becomeFirstResponder()
         
         // must have these in order to work!
-        AVAudioSession.sharedInstance().setActive(true, error: nil)
-        AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback, error: nil)
+        var error: NSError?
+        
+        AVAudioSession.sharedInstance().setActive(true, error: &error)
+        if error != nil {
+            println("Error 3 : \(error?.description)")
+        }
+        
+        AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback, error: &error)
+        
+        if error != nil {
+            println("Error 4 : \(error?.description)")
+        }
     }
     
     
@@ -317,17 +353,21 @@ class PartyViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 // Toggle play pause
                 println("pause")
                 //self.playerLayer.player.pause()
-                self.moviePlayer.pause()
+                self.appDelegate.moviePlayer?.pause()
                 break
             case UIEventSubtype.RemoteControlPlay:
                 println("play")
                 //self.playerLayer.player.play()
-                self.moviePlayer.play()
+                self.appDelegate.moviePlayer?.play()
                 break
             case UIEventSubtype.RemoteControlNextTrack:
                 println("skip")
-                self.playerController.player.pause()
-                self.onStop()
+                self.appDelegate.playerController?.player?.pause()
+                if self.appDelegate.playerController?.player? != nil {
+                    self.onStop()
+                } else {
+                    println("player is nil")
+                }
                 break
             default:
                 println("default \(event)")

@@ -1,0 +1,6 @@
+framework module SwiftyJSON {
+  umbrella header "Pods-musicApp2-SwiftyJSON-umbrella.h"
+
+  export *
+  module * { export * }
+}
