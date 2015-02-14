@@ -1,6 +1,0 @@
-framework module Bolts {
-  umbrella header "Pods-musicApp2-Bolts-umbrella.h"
-
-  export *
-  module * { export * }
-}

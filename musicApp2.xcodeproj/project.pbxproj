@@ -231,7 +231,7 @@
 			<string>2147483647</string>
 			<key>files</key>
 			<array>
-				<string>E799C16B6BD61A8B36E7A8D9</string>
+				<string>E16B63AEE38C510A01023017</string>
 			</array>
 			<key>isa</key>
 			<string>PBXFrameworksBuildPhase</string>
@@ -265,7 +265,6 @@
 				<string>004AB9761A3359CB008796D4</string>
 				<string>004AB9771A3359CB008796D4</string>
 				<string>B628C727B81C9AEB388124A2</string>
-				<string>2E8A9CE3F780243F2A80705A</string>
 			</array>
 			<key>buildRules</key>
 			<array/>
@@ -1192,7 +1191,7 @@
 		<dict>
 			<key>children</key>
 			<array>
-				<string>0E337B19BB22D22578D70E88</string>
+				<string>3090645ADB36F7A44B9E62AD</string>
 			</array>
 			<key>isa</key>
 			<string>PBXGroup</string>
@@ -1200,19 +1199,6 @@
 			<string>Frameworks</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
-		</dict>
-		<key>0E337B19BB22D22578D70E88</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>wrapper.framework</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>Pods_musicApp2.framework</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
 		</dict>
 		<key>1A834932B373DBA610F2BB11</key>
 		<dict>
@@ -1228,29 +1214,18 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>2E8A9CE3F780243F2A80705A</key>
+		<key>3090645ADB36F7A44B9E62AD</key>
 		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
+			<key>explicitFileType</key>
+			<string>archive.ar</string>
+			<key>includeInIndex</key>
+			<string>0</string>
 			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>name</key>
-			<string>Embed Pods Frameworks</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>"${SRCROOT}/Pods/Target Support Files/Pods-musicApp2/Pods-musicApp2-frameworks.sh"
-</string>
-			<key>showEnvVarsInLog</key>
-			<string>0</string>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>libPods-musicApp2.a</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
 		</dict>
 		<key>3E8AB0AED806087D5B2475BD</key>
 		<dict>
@@ -1336,19 +1311,12 @@ fi
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>E799C16B6BD61A8B36E7A8D9</key>
+		<key>E16B63AEE38C510A01023017</key>
 		<dict>
 			<key>fileRef</key>
-			<string>0E337B19BB22D22578D70E88</string>
+			<string>3090645ADB36F7A44B9E62AD</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>ATTRIBUTES</key>
-				<array>
-					<string>Weak</string>
-				</array>
-			</dict>
 		</dict>
 	</dict>
 	<key>rootObject</key>

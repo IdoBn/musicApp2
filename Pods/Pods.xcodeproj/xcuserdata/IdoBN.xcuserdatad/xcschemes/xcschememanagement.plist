@@ -9,11 +9,6 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-musicApp2-Alamofire.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>Pods-musicApp2-Bolts.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -25,11 +20,6 @@
 			<false/>
 		</dict>
 		<key>Pods-musicApp2-SocketRocket.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>Pods-musicApp2-SwiftyJSON.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -47,42 +37,32 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>2B6142BBF1341D949203F617</key>
+		<key>412624CFFEA28C46E8E18A31</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>439C8A0E36A7EE5E1E93B915</key>
+		<key>432C3F3C52B6078486B4A91A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>513CFE522D4F26B70A0FD9A8</key>
+		<key>4DCF1C2036C1FF96DF890467</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>576B458D96CB88E4BE5BE472</key>
+		<key>A2A5E0CEEA5F5456006AD14D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>61F4AA50C4A740859ED64BCB</key>
+		<key>A5B95F24778BB72DAA08BCF1</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>72E981BA9248194294358630</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>9F88E84158691CF6446846BB</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>B1A198F707C777EAFEB1EF56</key>
+		<key>D7B1D5371AB2CB9F3AD1D700</key>
 		<dict>
 			<key>primary</key>
 			<true/>

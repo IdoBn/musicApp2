@@ -48,12 +48,6 @@
 #define COCOAPODS_VERSION_MINOR_AFNetworking_UIKit 5
 #define COCOAPODS_VERSION_PATCH_AFNetworking_UIKit 0
 
-// Alamofire
-#define COCOAPODS_POD_AVAILABLE_Alamofire
-#define COCOAPODS_VERSION_MAJOR_Alamofire 1
-#define COCOAPODS_VERSION_MINOR_Alamofire 1
-#define COCOAPODS_VERSION_PATCH_Alamofire 4
-
 // Bolts
 #define COCOAPODS_POD_AVAILABLE_Bolts
 #define COCOAPODS_VERSION_MAJOR_Bolts 1
@@ -71,12 +65,6 @@
 #define COCOAPODS_VERSION_MAJOR_SocketRocket 0
 #define COCOAPODS_VERSION_MINOR_SocketRocket 3
 #define COCOAPODS_VERSION_PATCH_SocketRocket 1
-
-// SwiftyJSON
-#define COCOAPODS_POD_AVAILABLE_SwiftyJSON
-#define COCOAPODS_VERSION_MAJOR_SwiftyJSON 2
-#define COCOAPODS_VERSION_MINOR_SwiftyJSON 1
-#define COCOAPODS_VERSION_PATCH_SwiftyJSON 3
 
 // libPusher
 #define COCOAPODS_POD_AVAILABLE_libPusher

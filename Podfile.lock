@@ -20,7 +20,6 @@ PODS:
   - AFNetworking/UIKit (2.5.0):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
-  - Alamofire (1.1.4)
   - Bolts (1.1.3)
   - Facebook-iOS-SDK (3.21.1):
     - Bolts (~> 1.0)
@@ -29,22 +28,17 @@ PODS:
   - libPusher/Core (1.5):
     - SocketRocket (= 0.3.1-beta2)
   - SocketRocket (0.3.1-beta2)
-  - SwiftyJSON (2.1.3)
 
 DEPENDENCIES:
   - AFNetworking (~> 2.5)
-  - Alamofire (~> 1.1)
   - Facebook-iOS-SDK (~> 3.21)
   - libPusher (~> 1.5)
-  - SwiftyJSON (= 2.1.3)
 
 SPEC CHECKSUMS:
   AFNetworking: 0f54cb5d16ce38c1b76948faffb8d5fb705021c7
-  Alamofire: 524225da382071ee3e6d0badd0ee4b4dc36740de
   Bolts: 3db0a875235e0c9042b013af13af0f00f79b102c
   Facebook-iOS-SDK: 18c26e86ab25c17854a2ee2a8f60562099c6600f
   libPusher: 583326327a72ab7cd0f38692f61f9061cf4be3d9
   SocketRocket: 79a68ae186063c65e1fe6f638b1ae2927aa5f304
-  SwiftyJSON: 48be7490a3989a58a3f511cd54167f0a2b466e76
 
 COCOAPODS: 0.36.0.beta.2

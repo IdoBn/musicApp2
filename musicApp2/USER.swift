@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import JSON
 
 class User {
     
@@ -36,10 +35,6 @@ class User {
         let largeUrl = NSURL(string: thumbnail + "?type=large")
         let largeData = NSData(contentsOfURL: largeUrl!)
         self.largeThumbnail = UIImage(data: largeData!)!
-    }
-    
-    init(user: Data) {
-        let jsonUser = JSON(data: user)
     }
     
     init(user: NSDictionary) {
